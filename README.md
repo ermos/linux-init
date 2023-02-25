@@ -3,6 +3,9 @@
 sudo apt update
 sudo apt upgrade -y
 sudo apt install net-tools
+sudo apt install snapd
+sudo snap install core
+sudo snap install snapcraft --classic
 sudo apt install curl
 sudo apt install libfuse2
 sudo apt install gnome-tweaks
