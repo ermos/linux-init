@@ -1,5 +1,7 @@
 # Core
 ```shell
+sudo apt update
+sudo apt upgrade -y
 sudo apt install net-tools
 sudo apt install curl
 sudo apt install libfuse2
