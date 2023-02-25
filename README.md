@@ -36,8 +36,10 @@ sudo apt install insomnia
 - https://www.jetbrains.com/fr-fr/toolbox-app/
 
 # disable apache for docker or kubernetes reverse proxy
+```shell
 sudo systemctl disable apache2 && sudo systemctl stop apache2
 sudo apt remove apache2
+```
 
 action :
 - disable mouse acceleration
