@@ -31,6 +31,7 @@ sudo add-apt-repository ppa:peek-developers/stable
 sudo apt update
 sudo apt upgrade -y
 sudo apt install -y net-tools
+sudo apt install -y python3-launchpadlib
 sudo apt install -y snapd
 sudo snap install core
 sudo snap install snapcraft --classic
@@ -40,13 +41,28 @@ sudo apt install -y gnome-tweaks
 sudo apt install -y mariadb-client
 sudo apt install -y vim
 sudo apt install -y git
-sudo apt install -y terminator
 sudo apt install -y htop
 sudo apt install -y peek
 sudo apt install -y insomnia
-wget -q -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+# Chrome
+sudo wget -q -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i /tmp/chrome.deb
-# Config
+# Node
+sudo snap install node --classic
+# Golang
+sudo wget -q -O /tmp/go.tar.gz https://golang.org/dl/$(curl -s https://go.dev/VERSION?m=text | awk 'NR==1').linux-amd64.tar.gz
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf /tmp/go.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+# PHP
+sudo apt install -y software-properties-common ca-certificates lsb-release apt-transport-https
+sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php.list
+sudo apt update
+sudo apt install -y php8.3
+curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/local/bin/composer
+# Terminator
+sudo apt install -y terminator
 mkdir -p .config/terminator
 wget -q -O .config/terminator/config https://gist.githubusercontent.com/ermos/c3fb706718e47c09781fbb51a62261ce/raw/ba24c0f94b76dd1d19215a535ab5b3e898d42528/config
 ```
