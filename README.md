@@ -1,7 +1,30 @@
 # Core
 ```shell
+# Remove useless folders
 rm -r ~/Music
 rm -r ~/Templates
+# Disable apache 2
+sudo systemctl disable apache2 && sudo systemctl stop apache2
+sudo apt remove apache2
+# Remove useless apps
+sudo apt purge -y libreoffice-*
+sudo apt purge -y firefox-esr*
+sudo apt purge -y transmission-*
+sudo apt purge -y cheese
+sudo apt purge -y rhythmbox
+sudo apt purge -y gnome-terminal
+sudo apt purge -y gnome-contacts
+sudo apt purge -y gnome-games
+sudo apt purge -y gnome-maps
+sudo apt purge -y gnome-software
+sudo apt purge -y gnome-music
+sudo apt purge -y gnome-weather
+sudo apt purge -y gnome-sound-recorder
+sudo apt purge -y evolution
+sudo apt purge -y shotwell
+sudo apt -y autoremove
+sudo apt autoclean
+# Install default apps
 echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" \
     | sudo tee -a /etc/apt/sources.list.d/insomnia.list
 sudo add-apt-repository ppa:peek-developers/stable
@@ -23,23 +46,9 @@ sudo apt install -y peek
 sudo apt install -y insomnia
 wget -q -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i /tmp/chrome.deb
-sudo apt purge -y libreoffice-*
-sudo apt purge -y firefox-esr*
-sudo apt purge -y transmission-*
-sudo apt purge -y cheese
-sudo apt purge -y rhythmbox
-sudo apt purge -y gnome-terminal
-sudo apt purge -y gnome-contacts
-sudo apt purge -y gnome-games
-sudo apt purge -y gnome-maps
-sudo apt purge -y gnome-software
-sudo apt purge -y gnome-music
-sudo apt purge -y gnome-weather
-sudo apt purge -y gnome-sound-recorder
-sudo apt purge -y evolution
-sudo apt purge -y shotwell
-sudo apt -y autoremove
-sudo apt autoclean
+# Config
+mkdir -p .config/terminator
+wget -q -O .config/terminator/config https://gist.githubusercontent.com/ermos/c3fb706718e47c09781fbb51a62261ce/raw/ba24c0f94b76dd1d19215a535ab5b3e898d42528/config
 ```
 
 ## From web
@@ -51,39 +60,5 @@ sudo apt autoclean
 - https://www.jetbrains.com/fr-fr/toolbox-app/
 - ``sudo tar -xzf jetbrains-toolbox-1.17.7391.tar.gz -C /opt``
 
-
-# disable apache for docker or kubernetes reverse proxy
-```shell
-sudo systemctl disable apache2 && sudo systemctl stop apache2
-sudo apt remove apache2
-```
-
 action :
 - disable mouse acceleration
-
-
-
-terminator config :
-~/.config/terminator/config
-```
-[global_config]
-  tab_position = hidden
-[keybindings]
-  split_horiz = <Primary>f
-  split_vert = <Primary>d
-  close_term = <Primary>q
-  copy = <Primary>c
-  paste = <Primary>v
-  toggle_zoom = <Primary><Shift>Return
-[profiles]
-  [[default]]
-[layouts]
-  [[default]]
-    [[[window0]]]
-      type = Window
-      parent = ""
-    [[[child1]]]
-      type = Terminal
-      parent = window0
-[plugins]
-```
