@@ -21,11 +21,21 @@ sudo apt install -y peek
 sudo apt install -y insomnia
 wget -q -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i /tmp/chrome.deb
-sudo apt remove -y libreoffice-*
+sudo apt purge -y libreoffice-*
+sudo apt purge -y firefox-esr*
+sudo apt purge -y transmission-*
+sudo apt purge -y cheese
+sudo apt purge -y rhythmbox
+sudo apt purge -y gnome-terminal
+sudo apt purge -y gnome-contacts
 sudo apt purge -y gnome-games
-sudo apt remove -y cheese
-sudo apt remove -y rhythmbox
-sudo apt remove -y gnome-terminal
+sudo apt purge -y gnome-maps
+sudo apt purge -y gnome-software
+sudo apt purge -y gnome-music
+sudo apt purge -y gnome-weather
+sudo apt purge -y gnome-sound-recorder
+sudo apt purge -y evolution
+sudo apt purge -y shotwell
 sudo apt -y autoremove
 sudo apt autoclean
 ```
