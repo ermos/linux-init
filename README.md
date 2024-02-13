@@ -1,5 +1,7 @@
 # Core
 ```shell
+rm -r ~/Music
+rm -r ~/Templates
 echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" \
     | sudo tee -a /etc/apt/sources.list.d/insomnia.list
 sudo add-apt-repository ppa:peek-developers/stable
