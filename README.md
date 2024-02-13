@@ -1,4 +1,4 @@
-# Core
+# From Command-line
 ```shell
 # Remove useless folders
 rm -r ~/Music
