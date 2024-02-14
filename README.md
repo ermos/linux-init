@@ -6,24 +6,6 @@ rm -r ~/Templates
 # Disable apache 2
 sudo systemctl disable apache2 && sudo systemctl stop apache2
 sudo apt remove apache2
-# Remove useless apps
-sudo apt purge -y libreoffice-*
-sudo apt purge -y firefox-esr*
-sudo apt purge -y transmission-*
-sudo apt purge -y cheese
-sudo apt purge -y rhythmbox
-sudo apt purge -y gnome-terminal
-sudo apt purge -y gnome-contacts
-sudo apt purge -y gnome-games
-sudo apt purge -y gnome-maps
-sudo apt purge -y gnome-software
-sudo apt purge -y gnome-music
-sudo apt purge -y gnome-weather
-sudo apt purge -y gnome-sound-recorder
-sudo apt purge -y evolution
-sudo apt purge -y shotwell
-sudo apt -y autoremove
-sudo apt autoclean
 # Install default apps
 echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" \
     | sudo tee -a /etc/apt/sources.list.d/insomnia.list
@@ -65,6 +47,24 @@ curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/l
 sudo apt install -y terminator
 mkdir -p .config/terminator
 wget -q -O .config/terminator/config https://gist.githubusercontent.com/ermos/c3fb706718e47c09781fbb51a62261ce/raw/ba24c0f94b76dd1d19215a535ab5b3e898d42528/config
+# Remove useless apps
+sudo apt purge -y libreoffice-*
+sudo apt purge -y firefox-esr*
+sudo apt purge -y transmission-*
+sudo apt purge -y cheese
+sudo apt purge -y rhythmbox
+sudo apt purge -y gnome-terminal
+sudo apt purge -y gnome-contacts
+sudo apt purge -y gnome-games
+sudo apt purge -y gnome-maps
+sudo apt purge -y gnome-software
+sudo apt purge -y gnome-music
+sudo apt purge -y gnome-weather
+sudo apt purge -y gnome-sound-recorder
+sudo apt purge -y evolution
+sudo apt purge -y shotwell
+sudo apt -y autoremove
+sudo apt autoclean
 ```
 
 ## From web
