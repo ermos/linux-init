@@ -30,7 +30,7 @@ sudo apt install -y insomnia
 sudo wget -q -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i /tmp/chrome.deb
 # Node
-sudo snap install node --classic
+sudo wget -q -O https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 # Golang
 sudo wget -q -O /tmp/go.tar.gz https://golang.org/dl/$(curl -s https://go.dev/VERSION?m=text | awk 'NR==1').linux-amd64.tar.gz
 sudo rm -rf /usr/local/go
