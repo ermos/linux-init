@@ -35,7 +35,8 @@ sudo wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh |
 sudo wget -q -O /tmp/go.tar.gz https://golang.org/dl/$(curl -s https://go.dev/VERSION?m=text | awk 'NR==1').linux-amd64.tar.gz
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf /tmp/go.tar.gz
-export PATH=$PATH:/usr/local/go/bin
+echo "# Golang" >> ~/.bashrc
+echo "export PATH=\$PATH:/usr/local/go/bin:~/go/bin" >> ~/.bashrc
 # PHP
 sudo apt install -y software-properties-common ca-certificates lsb-release apt-transport-https
 sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
