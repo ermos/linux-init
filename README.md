@@ -5,7 +5,7 @@ rm -r ~/Music
 rm -r ~/Templates
 # Disable apache 2
 sudo systemctl disable apache2 && sudo systemctl stop apache2
-sudo apt remove apache2
+sudo apt purge -y apache2
 # Install default apps
 echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" \
     | sudo tee -a /etc/apt/sources.list.d/insomnia.list
